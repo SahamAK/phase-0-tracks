@@ -21,4 +21,6 @@
 	* sometimes the process of merging changes does not go smoothly. If you changes the same part in two or more different branches or if another team member has updated the same code, Git won't be able to merge them. That is when you get a "conflict" message when you run merge. You need to reslove the issue before proceeding with the merge.
 
 * I am adding this section for Release 2.
-* I am adding this comment to resubmit this file.
+
+* I am adding this comment to resubmit this file.=======
+
