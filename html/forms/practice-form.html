@@ -5,5 +5,28 @@
 <body>
 <h1> Welcome to Form page </h1>
 <p> Please fill out the form: </p>
+<form action="success.html" method="post">
+  <div>
+    <label>Email:</label>
+    <input type="email" name="email">
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password">
+  </div>
+  <div>
+      <label>Type of car:</label>
+      <select name="car">
+        <option value="SUV">SUV</option>
+        <option value="Truck">Truck</option>
+        <option value="car">car</option>
+      </select>
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea cols="50" rows="10"></textarea>
+    </div>
+  <button type="submit">Log in</button>
+</form>
 </body>
 </html>
