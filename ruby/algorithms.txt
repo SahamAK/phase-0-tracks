@@ -16,3 +16,25 @@
   - When door open, exit elevator to your floor.
 
   Example of common task in my life: Steps to take to do homework
+
+  - Schedule a time to work on homework
+  - Turn on computer
+  - Until homework is done
+    - Login Canvas
+    - find the assignment
+    - open Bash Shell
+    - create a branch 
+    - create/edit file
+    - open sublime from command line
+    - until done
+      - edit file in sublime
+      - save changes
+      -  if no more changes
+        - then done
+    - run ruby from command line
+    - if error
+      - fix error
+
+    -otherwise 
+      - homwrok is done
+  - Turn off computer
