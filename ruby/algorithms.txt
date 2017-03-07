@@ -16,11 +16,12 @@
   - When door open, exit elevator to your floor.
 
   Example of common task in my life: Steps to take to do homework
+  ****************************************************************
 
   - Schedule a time to work on homework
   - Turn on computer
+  -Login Canvas
   - Until homework is done
-    - Login Canvas
     - find the assignment
     - open Bash Shell
     - create a branch 
@@ -34,7 +35,6 @@
     - run ruby from command line
     - if error
       - fix error
-
     -otherwise 
       - homwrok is done
   - Turn off computer
