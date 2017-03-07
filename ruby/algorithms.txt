@@ -1,3 +1,7 @@
+************************************
+* Release 0: Equip Your New Robot  *
+************************************
+
 - Move toward the Elevator.
 - Look to the right side of the Elevator door.
 - If door is not open
@@ -10,13 +14,16 @@
     - search the keypad for your floor number
   - if found
     - push the floor number.
-- Otherwise
+  - Otherwise
     - Exit elevator
 
-  - When door open, exit elevator to your floor.
+- When door open, exit elevator to your floor.
 
-  Example of common task in my life: Steps to take to do homework
-  ****************************************************************
+*********************************************************************
+* Release 1:Find a Real-Life Algorithm                              *
+*   Example of common task in my life: Steps to take to do homework *
+*********************************************************************
+Devbootcamp Homework
 
   - Schedule a time to work on homework
   - Turn on computer
