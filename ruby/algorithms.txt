@@ -1,0 +1,47 @@
+************************************
+* Release 0: Equip Your New Robot  *
+************************************
+
+- Move toward the Elevator.
+- Look to the right side of the Elevator door.
+- If door is not open
+  -Push button to open door
+  -wait for door to open
+-Enter elevator
+- If you know which floor you are going to:
+  -find the keypad
+  - Until you find the floor number do the following:
+    - search the keypad for your floor number
+  - if found
+    - push the floor number.
+  - Otherwise
+    - Exit elevator
+
+- When door open, exit elevator to your floor.
+
+*********************************************************************
+* Release 1:Find a Real-Life Algorithm                              *
+*   Example of common task in my life: Steps to take to do homework *
+*********************************************************************
+Devbootcamp Homework
+
+  - Schedule a time to work on homework
+  - Turn on computer
+  -Login Canvas
+  - Until homework is done
+    - find the assignment
+    - open Bash Shell
+    - create a branch 
+    - create/edit file
+    - open sublime from command line
+    - until done
+      - edit file in sublime
+      - save changes
+      -  if no more changes
+        - then done
+    - run ruby from command line
+    - if error
+      - fix error
+    -otherwise 
+      - homwrok is done
+  - Turn off computer
