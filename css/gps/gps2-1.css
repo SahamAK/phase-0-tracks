@@ -1,7 +1,28 @@
-
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+header, footer {
+  background-color: blue;
+  border: 2px black solid;
+}
+header {
+  background-image: url("https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+    
+}
+.column-1 {
+  border: 2px black solid;
+  display:inline-block;
+  width: 49%;
+  background-color: beige;
+  margin-top: 50px;
+  padding-top: 30px;
+}
+.column-2 {
+  border: 2px black solid;
+  display:inline-block;
+  width: 49%;
+  background-color: gray;
   
+}
+.column-1 article {
+  font-style: helvetica;
 }
