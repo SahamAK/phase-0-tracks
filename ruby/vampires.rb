@@ -18,10 +18,10 @@ year = gets.chomp.to_i
   
 =end
 puts "Our company cafeteria serves garlic bread. Should we order some for you? "
-garlic_bread = gets.chomps
+garlic_bread = gets.chomp
 =begin
   Vampires are immortal.
   
 =end
 puts "Would you like to enroll in the company's health insurance? "
-health_insurance = get.chomps
+health_insurance = gets.chomp
