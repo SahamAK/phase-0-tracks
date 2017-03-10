@@ -80,8 +80,13 @@ more_employees = true
 max_age = 30
 famous_vampires = ["Highgate", "Gorglin Grange", "Vampire of New England", "Fritz Haarmann", "Clara Geisslerin", "Peter Plogojowitz", "Elizabeth Bathory", "Vlad III"]
 puts "Welcome to Werewolf Inc., quittin' time is always before sundown"
-
-while more_employees do
+puts "*******************************"
+puts ""
+puts "How many employees to process? "
+emp_num = gets.chomp.to_i
+puts "Number of Employees to enter : " + emp_num
+counter = 1
+while counter <=emp_num do
 puts " What is your name? "
 name = gets.chomp
 
@@ -126,9 +131,11 @@ puts "after method #{health_insurance}"
 #call method to figure out employee's status
 
   employee = emp_def(age_year,garlic_bread,health_insurance,name)
-  puts "Do you have more employee's data to enter?"
-#more_employee = gets.chomp
-  more_employees = answer_boolean(gets.chomp)
-  puts "more_employee : #{more_employees}"
+  #puts "Do you have more employee's data to enter?"
+  #more_employee = gets.chomp
+  #more_employees = answer_boolean(gets.chomp)
+  #puts "more_employee : #{more_employees}"
+  counter -= 1
+  puts "counter is :" + counter
 end
 puts "THIS IS THE END OF THE MAIN PROGRAM!"
