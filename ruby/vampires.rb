@@ -33,7 +33,7 @@ def age_right (emp_age, emp_year,max_age)
 end
 
 #This method decide on employee status
-def emp_def ( age_boolean, garlic_bread_boolean, health_insurance_boolean, emp_name)
+def emp_def ( age_boolean, garlic_bread_boolean, health_insurance_boolean, emp_name, allergy)
 
 # if age is right and is willing to eat garlic or signup for insurance
 #  then "Probably not a vampire"
@@ -43,14 +43,16 @@ def emp_def ( age_boolean, garlic_bread_boolean, health_insurance_boolean, emp_n
       puts "emp_status status is : #{emp_status}"
     else
       
-      if  (age_boolean ==true)  && (( garlic_bread_boolean || health_insurance_boolean) ==true)
+      if  ((age_boolean ==true)  && (( garlic_bread_boolean || health_insurance_boolean) ==true)) && (allergy !="sunshine")
         emp_status = "Probably not vampire"
         puts "age_boolean: #{age_boolean}, garlic_bread_boolean : #{garlic_bread_boolean}, health_insurance_boolean: #{health_insurance_boolean}"
         puts "employee status is : #{emp_status}"
-      elsif (age_boolean ==false)  && (( garlic_bread_boolean || health_insurance_boolean) ==true)
+
+      elsif ((age_boolean ==false)  && (( garlic_bread_boolean || health_insurance_boolean) ==true)) || allergy =="sunshine"
         emp_status = "Probably a vampire"
         puts "age_boolean: #{age_boolean}, garlic_bread_boolean : #{garlic_bread_boolean}, health_insurance_boolean: #{health_insurance_boolean}"
         puts "employee status is : #{emp_status}"
+
       elsif (age_boolean ==false)  && ( garlic_bread_boolean == false) && (health_insurance_boolean == false)
         emp_status = "Almost certianly a vampire"
         puts "age_boolean: #{age_boolean}, garlic_bread_boolean : #{garlic_bread_boolean}, health_insurance_boolean: #{health_insurance_boolean}"
@@ -132,9 +134,31 @@ health_insurance = answer_boolean(health_insurance)
 
 puts "after method #{health_insurance}"
 
+#----------------------------------
+#release 4: allergies
+#----------------------------------
+emp_done = " "
+allergy_arr = []
+
+while emp_done != "Done" do
+  puts "Do you have any allergies? when done, enter 'Done'"
+  emp_done = gets.chomp
+  
+  if emp_done != "Done"
+    allergy_arr.push emp_done
+    if emp_done == "sunshine"
+      puts "allergy is : #{emp_done}"
+      break
+    end
+    puts "first array print"
+    puts allergy_arr.join(' ')
+  end
+end
+
+
 #call method to figure out employee's status
 
-  employee = emp_def(age_year,garlic_bread,health_insurance,name)
+  employee = emp_def(age_year,garlic_bread,health_insurance,name,emp_done)
   #The following will print the result for the employee
   puts "--------------------------------------------------------------------"
   puts "Employee name : #{name}"
@@ -143,6 +167,7 @@ puts "after method #{health_insurance}"
   puts "Did employee provide the right age? #{age_year}"
   puts "Garlic bread: #{garlic_bread}"
   puts "Health insurance: #{health_insurance}"
+  puts "Allergies are: #{allergy_arr.join(' ')}"
   puts "Result: #{employee}"
   puts ""
   puts "--------------------------------------------------------------------"
