@@ -76,9 +76,12 @@ Save Data.
 #
 =end
 # List of famous Vampires
+more_employees = true
 max_age = 30
 famous_vampires = ["Highgate", "Gorglin Grange", "Vampire of New England", "Fritz Haarmann", "Clara Geisslerin", "Peter Plogojowitz", "Elizabeth Bathory", "Vlad III"]
 puts "Welcome to Werewolf Inc., quittin' time is always before sundown"
+
+while more_employees do
 puts " What is your name? "
 name = gets.chomp
 
@@ -121,5 +124,11 @@ health_insurance = answer_boolean(health_insurance)
 puts "after method #{health_insurance}"
 
 #call method to figure out employee's status
-employee = emp_def(age_year,garlic_bread,health_insurance,name)
+
+  employee = emp_def(age_year,garlic_bread,health_insurance,name)
+  puts "Do you have more employee's data to enter?"
+#more_employee = gets.chomp
+  more_employees = answer_boolean(gets.chomp)
+  puts "more_employee : #{more_employees}"
+end
 puts "THIS IS THE END OF THE MAIN PROGRAM!"
