@@ -49,9 +49,11 @@ def emp_def ( age_boolean, garlic_bread_boolean, health_insurance_boolean, emp_n
         puts "employee status is : #{emp_status}"
       elsif (age_boolean ==false)  && (( garlic_bread_boolean || health_insurance_boolean) ==true)
         emp_status = "Probably a vampire"
+        puts "age_boolean: #{age_boolean}, garlic_bread_boolean : #{garlic_bread_boolean}, health_insurance_boolean: #{health_insurance_boolean}"
         puts "employee status is : #{emp_status}"
       elsif (age_boolean ==false)  && ( garlic_bread_boolean == false) && (health_insurance_boolean == false)
         emp_status = "Almost certianly a vampire"
+        puts "age_boolean: #{age_boolean}, garlic_bread_boolean : #{garlic_bread_boolean}, health_insurance_boolean: #{health_insurance_boolean}"
         puts "employee status is: #{emp_status}"
 =begin
       elsif (["Drake Cula", "Tu Fang"].include?(emp_name) == true)
@@ -60,9 +62,11 @@ def emp_def ( age_boolean, garlic_bread_boolean, health_insurance_boolean, emp_n
 =end
       else
         emp_status = "Results inconclusive"
+        puts "age_boolean: #{age_boolean}, garlic_bread_boolean : #{garlic_bread_boolean}, health_insurance_boolean: #{health_insurance_boolean}"
         puts "emp_status is #{emp_status}"
       end
   end
+  return emp_status
 
 end
   
@@ -84,7 +88,7 @@ puts "*******************************"
 puts ""
 puts "How many employees to process? "
 emp_num = gets.chomp.to_i
-puts "Number of Employees to enter : " + emp_num
+puts "Number of Employees to enter : #{emp_num}"
 counter = 1
 while counter <=emp_num do
 puts " What is your name? "
@@ -131,11 +135,19 @@ puts "after method #{health_insurance}"
 #call method to figure out employee's status
 
   employee = emp_def(age_year,garlic_bread,health_insurance,name)
-  #puts "Do you have more employee's data to enter?"
-  #more_employee = gets.chomp
-  #more_employees = answer_boolean(gets.chomp)
-  #puts "more_employee : #{more_employees}"
-  counter -= 1
-  puts "counter is :" + counter
+  #The following will print the result for the employee
+  puts "--------------------------------------------------------------------"
+  puts "Employee name : #{name}"
+  puts "Employee age: #{age}"
+  puts "Employee year of birth: #{year}"
+  puts "Did employee provide the right age? #{age_year}"
+  puts "Garlic bread: #{garlic_bread}"
+  puts "Health insurance: #{health_insurance}"
+  puts "Result: #{employee}"
+  puts ""
+  puts "--------------------------------------------------------------------"
+  
+  counter += 1
+  puts "counter is : #{counter}"
 end
 puts "THIS IS THE END OF THE MAIN PROGRAM!"
