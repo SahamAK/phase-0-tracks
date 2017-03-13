@@ -17,12 +17,17 @@ puts initial_str.swapcase
 #puts swap_case
 
 # "zom".<???>
+puts "zom".insert(1, 'o')
+puts "zom".sub(/([o])/,'oo')
+puts "zom".sub(/([o])/,'o'*2)
 # => “zoom”
 
 # "enhance".<???>
 # => "    enhance    "
+puts "enhance".center(15,' ')
 
 # "Stop! You’re under arrest!".<???>
+puts "Stop! You're under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 # "the usual".<???>
