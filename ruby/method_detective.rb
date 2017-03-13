@@ -1,4 +1,4 @@
-# Replace in the "<???>" with the appropriate method (and arguments, if any).
+#Replace in the "<???>" with the appropriate method (and arguments, if any).
 # Uncomment the calls to catch these methods red-handed.
 
 # When there's more than one suspect who could have
@@ -6,6 +6,15 @@
 
 # "iNvEsTiGaTiOn".<???>
 # => “InVeStIgAtIoN”
+initial_str = "iNvEsTiGaTiOn"
+#using replace
+puts initial_str.replace "InVeStIgAtIoN"
+#puts replace_case
+
+#using swapcase
+initial_str = "iNvEsTiGaTiOn"
+puts initial_str.swapcase
+#puts swap_case
 
 # "zom".<???>
 # => “zoom”
