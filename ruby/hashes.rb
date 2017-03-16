@@ -1,3 +1,14 @@
+=begin
+  This program will 
+  a. Prompt the designer for the client information
+  b. will convert to appropriate datatypes 
+  c. Print the hash to screen
+  d. Ask the designer if need to make changes to a key
+  e. If key is not empty, update client information and print hash.
+  
+=end
+
+
 client_info = {
 	name: [],
 	age: [],
@@ -40,15 +51,18 @@ key_entered = gets.chomp
 
 if key_entered.empty? == false
   key_entered = key_entered.to_sym
-  puts key_entered
+  #puts key_entered
   puts "enter new value:"
   new_value = gets.chomp
 
 
-if new_value.match(/^(\d)+$/) then new_value = new_value.to_i end
-p new_value
+  if new_value.match(/^(\d)+$/) then new_value = new_value.to_i end
+  #p new_value
 
-client_info[key_entered] = new_value
-puts client_info
+  client_info[key_entered] = new_value
+  puts " UPDATED CLIENT INFORMATION"
+  puts client_info
 
+else
+  puts "You have entered an empty string!"
 end
