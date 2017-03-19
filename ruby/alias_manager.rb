@@ -67,5 +67,30 @@ end
 p new_a
 p new_a.join
 end
-name = "Saham Khozestani"
-tricky_algorithm(name)
+arr_name = []
+arr_tricky = []
+name = nil
+#Release 1 Provide user interface
+p "Welcome to our Tricky Algorithm to alter your name"
+
+ while name !="quit" do
+  p "please enter a first name and last name. If done, enter 'quit':"
+  name = gets.chomp
+#name = "Saham Khozestani"
+if name == nil
+  break
+elsif name !="quit"
+  arr_tricky.push tricky_algorithm(name)
+  arr_name.push name
+end
+
+end
+
+counter = 0
+while counter < arr_name.length do
+  p "#{arr_name[counter]} is also known as #{arr_tricky[counter]}."
+  counter +=1
+end
+
+#p "the array of names: #{arr_name}"
+#p "the array of tricky Names: #{arr_tricky}"
