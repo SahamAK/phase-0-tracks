@@ -32,12 +32,12 @@ new_a.each do |element|
     index = vowel.find_index(element)
     new_a[i] =vowel[index +1]
     #new_a[i]= element.next
-    if element !="u" ||element !="U"
+    if (element !="u" && element !="U")
      new_a[i] = vowel[index + 1]
     else
       if element =="u"
       new_a[i] = "a"
-      else
+      elsif element == "U"
         new_a[i] = "A"
       end
     end
@@ -46,9 +46,9 @@ new_a.each do |element|
     p element
 
     if element =="Z" 
-      new_a[i] = "A"
+      new_a[i] = "B"
     elsif element =="z"
-      new_a[i] = "a"
+      new_a[i] = "b"
 
     else
 
@@ -69,6 +69,7 @@ p new_a.join
 end
 arr_name = []
 arr_tricky = []
+p "arr name before pushing : #{arr_name}"
 name = nil
 #Release 1 Provide user interface
 p "Welcome to our Tricky Algorithm to alter your name"
@@ -77,18 +78,28 @@ p "Welcome to our Tricky Algorithm to alter your name"
   p "please enter a first name and last name. If done, enter 'quit':"
   name = gets.chomp
 #name = "Saham Khozestani"
-if name == nil
-  break
-elsif name !="quit"
-  arr_tricky.push tricky_algorithm(name)
+if name != nil 
+  if name !="quit" 
+  arr_tricky<< tricky_algorithm(name)
   arr_name.push name
+  end
+else
+  exit
 end
 
 end
 
+#arr_tricky = arr_tricky.compact
+arr_name = arr_name.compact
 counter = 0
-while counter < arr_name.length do
+#p "the array of names: #{arr_name}"
+#p "the array of tricky Names: #{arr_tricky}"
+while counter < arr_name.count do
+  if arr_name[counter].empty?
+    break
+  else
   p "#{arr_name[counter]} is also known as #{arr_tricky[counter]}."
+end
   counter +=1
 end
 
