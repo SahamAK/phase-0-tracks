@@ -80,6 +80,37 @@ print_list(grocery_list)
 
 #------------------------------------------
 
+=begin
+Release 4: Reflect
 
+WHAT DID YOU LEARN ABOUT PSEUDOCODE FROM WORKING ON THIS CHALLENGE?
+  Pseudocode is writing the steps you want to take to prior to coding. This helps to break down
+  your codes to steps to see the big picture. Without pseudocode, it will be a big mess to write 
+  a program. 
+
+WHAT THE TRADEOFFS OF USING ARRAYS AND HASHES FOR THIS CHALLENGE?
+  Array is a list of items. We needed hash here since each of our item is associated with a value.
+  Hash simplified accessing quantities for each item.It is less steps using the hash.
+
+WHAT DOES A METHOD RETURN?
+  Each method in this program returned the updated list. The last method, print_list, used to print the list.
+
+WHAT KIND OF THINGS CAN YOU PASS INTO METHODS AS ARGUMENTS?
+  We can pass integer, strings, arrays, hashes, and other methods.
+
+HOW CAN YOU PASS INFORMATION BETWEEN METHODS?
+  Information can be passed by calling the method as an argument or passing the return value 
+  of the method in the argument.
+
+WHAT CONCEPTS WERE SOLIDIFIED IN THIS CHALLENGE, AND WHAT CONCEPTS ARE STILL CONFUSING?
+  This was a real life scenario of using a list. This was a good comparison between hashes and arrays.
+  Also, we tried to use the built-in methods for hash and array. This simplified our code. I still have to need to work
+  on he syntax of these commands.
+
+
+
+  
+  
+=end
 
 
