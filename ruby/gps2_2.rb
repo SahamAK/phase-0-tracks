@@ -39,6 +39,7 @@
 def create_list(string)
   grocery_list = {}
   array = string.split
+
   array.each do | item |
     grocery_list["#{item}"] = 0
   end
@@ -47,11 +48,8 @@ end
 #---------------------------------
 def add_item(list,item,quantity=0)
 
-  if quantity == nil
-    quantity = 0
-  end
-    list["#{item}"] = quantity
-    list
+  list["#{item}"] = quantity
+  list
 end
 #--------------------------------------
 #remove item from list
@@ -72,15 +70,16 @@ def print_list(list)
   list.each { |item, qty| puts "#{item}      #{qty}"}
 end
      
-
-grocery_list =create_list('carrots cereal icecream')
+grocery_list = create_list('carrots cereal icecream')
 puts grocery_list
-
 puts add_item(grocery_list,"pizza", 3)
-
 puts delete_item(grocery_list,"cereal")
 puts update_qty(grocery_list,"carrots",2)
-
+puts ''
 print_list(grocery_list)
 
 #------------------------------------------
+
+
+
+
