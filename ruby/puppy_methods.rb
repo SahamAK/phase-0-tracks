@@ -27,11 +27,23 @@ class Puppy
   	p "If age is #{age} in months, sleeps for #{hours} hours."
   	hours
   end
+  #Release 1: Declare an Intialize Method
+  def initialize
+  	p "initializing new puppy instance ..."
+  end
 
+end
+#Releae 2: Own Class
+class Countries
+	def initialize(country,capital)
+		capital_city = capital
+		country_input = country
+		p "initializing #{country_input} instance with capital #{capital_city} ..."
+	end
 end
 
 rio = Puppy.new
-
+=begin
 p "#{rio.fetch("ball")}"
 
 p "#{rio.speak(3)}"
@@ -46,5 +58,12 @@ age = gets.chomp.to_i
 
 hours = rio.sleep(age)
 p " hours : #{hours}"
+=end
+
+country ="Germany"
+capital = "Berlin"
+lauren = Countries.new(country,capital)
+
+
 
 
