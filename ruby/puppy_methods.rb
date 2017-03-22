@@ -34,6 +34,9 @@ class Puppy
 
 end
 #Releae 2: Own Class
+#This is a class of new planets with random capitals
+#We initialize each class with planet name and capital
+#The methods are to populate and pritn out climate
 class New_planets
 	def initialize(planet,capital)
 		capital_city = capital
@@ -65,6 +68,7 @@ age = gets.chomp.to_i
 hours = rio.sleep(age)
 p " hours : #{hours}"
 =end
+#intialize planets array
 planets = []
 capitals ="Adrastea
 Aitne
@@ -117,19 +121,10 @@ Sponde
 Thebe
 Themisto"
 capitals = capitals.split
-#p capitals
 
-
-
-#country ="Germany"
-#capital = "Berlin"
-#lauren = Countries.new(country,capital)
-
-#lauren.populate("80,000,000")
-#lauren.climate
 
 counter = 0
-
+planets_data = []
 
 while counter < 50
 	alpha = "abcdefghijklmnopqrstuvwxyz".split(//)
@@ -145,8 +140,13 @@ end
 
 planets.each do |planet|
 	planet = New_planets.new(planet,capitals.sample)
+	planets_data << planet
 end
+planets_data.each do |planet|
 
+	planet.populate("1,000,000")
+	planet.climate
+end
 
 
 
