@@ -61,3 +61,7 @@ end
 santas.each do |person|
   person.print_list
 end
+
+#Release 2
+#getters and setters
+
