@@ -40,6 +40,12 @@ class Countries
 		country_input = country
 		p "initializing #{country_input} instance with capital #{capital_city} ..."
 	end
+	def populate(population)
+		p "Population is #{population}."
+	end
+	def climate
+		p "The climate is mostly cloudy!"
+	end
 end
 
 rio = Puppy.new
@@ -63,6 +69,10 @@ p " hours : #{hours}"
 country ="Germany"
 capital = "Berlin"
 lauren = Countries.new(country,capital)
+
+lauren.populate("80,000,000")
+lauren.climate
+
 
 
 
