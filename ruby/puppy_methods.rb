@@ -34,11 +34,11 @@ class Puppy
 
 end
 #Releae 2: Own Class
-class Countries
-	def initialize(country,capital)
+class New_planets
+	def initialize(planet,capital)
 		capital_city = capital
-		country_input = country
-		p "initializing #{country_input} instance with capital #{capital_city} ..."
+		planet_name = planet
+		p "initializing #{planet_name} instance with capital #{capital_city} ..."
 	end
 	def populate(population)
 		p "Population is #{population}."
@@ -65,13 +65,90 @@ age = gets.chomp.to_i
 hours = rio.sleep(age)
 p " hours : #{hours}"
 =end
+planets = []
+capitals ="Adrastea
+Aitne
+Amalthea
+Ananke
+Aoede
+Arche
+Autonoe
+Callirrhoe
+Callisto
+Carme
+Carpo
+Chaldene
+Cyllene
+Dia
+Elara
+Erinome
+Eukelade
+Euanthe
+Euporie
+Europa
+Eurydome
+Ganymede
+Harpalyke
+Hegemone
+Helike
+Hermippe
+Herse
+Himalia
+Io
+Iocaste
+Isonoe
+Jupiter LI
+Jupiter LII
+Kale
+Kallichore
+Kalyke
+Kore
+Leda
+Lysithea
+Megaclite
+Metis
+Mneme
+Orthosie
+Pasiphae
+Pasithee
+Praxidike
+Sinope
+Sponde
+Thebe
+Themisto"
+capitals = capitals.split
+#p capitals
 
-country ="Germany"
-capital = "Berlin"
-lauren = Countries.new(country,capital)
 
-lauren.populate("80,000,000")
-lauren.climate
+
+#country ="Germany"
+#capital = "Berlin"
+#lauren = Countries.new(country,capital)
+
+#lauren.populate("80,000,000")
+#lauren.climate
+
+counter = 0
+
+
+while counter < 50
+	alpha = "abcdefghijklmnopqrstuvwxyz".split(//)
+	planet_name = alpha.sample
+	number = rand(1..1000).to_s
+	
+	planets << (planet_name + number)
+	#capital_name = capitals.sample
+	
+	counter += 1
+end
+#p planets
+
+planets.each do |planet|
+	planet = New_planets.new(planet,capitals.sample)
+end
+
+
+
 
 
 
