@@ -1,3 +1,5 @@
+#Names: Saham Khozestani & Lauren Rodrigues
+#6.2 Mandatory Pairing: Instance Methods
 class Puppy
 
   def fetch(toy)
@@ -51,8 +53,10 @@ class New_planets
 	end
 end
 
+p "Release 1: calling puppy methods"
+p " "
 rio = Puppy.new
-=begin
+
 p "#{rio.fetch("ball")}"
 
 p "#{rio.speak(3)}"
@@ -67,16 +71,17 @@ age = gets.chomp.to_i
 
 hours = rio.sleep(age)
 p " hours : #{hours}"
-=end
+puts " "
+#Release 2: Calling methods.
 #intialize planets array
 planets = []
 capitals ="Adrastea Aitne Amalthea Ananke Aoede Arche Autonoe Callirrhoe Callisto Carme Carpo Chaldene  Cyllene Dia Elara Erinome Eukelade Euanthe Euporie Europa Eurydome Ganymede Harpalyke Hegemone Helike Hermippe Herse Himalia Io Iocaste Isonoe Jupiter LI Jupiter LII Kale Kallichore Kalyke Kore Leda Lysithea Megaclite Metis Mneme Orthosie Pasiphae Pasithee Praxidike Sinope Sponde Thebe Themisto"
 capitals = capitals.split
 
-
 counter = 0
 planets_data = []
 
+#In the this LOOP, generate a name for the planet with a random character and a random number from 1-1000.
 while counter < 50
 	alpha = "abcdefghijklmnopqrstuvwxyz".split(//)
 	planet_name = alpha.sample
@@ -88,13 +93,14 @@ while counter < 50
 	counter += 1
 end
 #p planets
-
+puts "Initializing planets array"
 planets.each do |planet|
 	planet = New_planets.new(planet,capitals.sample)
 	planets_data << planet
 end
+puts "For each plante, display the population and climate"
+puts " "
 planets_data.each do |planet|
-
 	planet.populate("1,000,000")
 	planet.climate
 end
