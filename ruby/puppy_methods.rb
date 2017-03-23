@@ -70,56 +70,7 @@ p " hours : #{hours}"
 =end
 #intialize planets array
 planets = []
-capitals ="Adrastea
-Aitne
-Amalthea
-Ananke
-Aoede
-Arche
-Autonoe
-Callirrhoe
-Callisto
-Carme
-Carpo
-Chaldene
-Cyllene
-Dia
-Elara
-Erinome
-Eukelade
-Euanthe
-Euporie
-Europa
-Eurydome
-Ganymede
-Harpalyke
-Hegemone
-Helike
-Hermippe
-Herse
-Himalia
-Io
-Iocaste
-Isonoe
-Jupiter LI
-Jupiter LII
-Kale
-Kallichore
-Kalyke
-Kore
-Leda
-Lysithea
-Megaclite
-Metis
-Mneme
-Orthosie
-Pasiphae
-Pasithee
-Praxidike
-Sinope
-Sponde
-Thebe
-Themisto"
+capitals ="Adrastea Aitne Amalthea Ananke Aoede Arche Autonoe Callirrhoe Callisto Carme Carpo Chaldene  Cyllene Dia Elara Erinome Eukelade Euanthe Euporie Europa Eurydome Ganymede Harpalyke Hegemone Helike Hermippe Herse Himalia Io Iocaste Isonoe Jupiter LI Jupiter LII Kale Kallichore Kalyke Kore Leda Lysithea Megaclite Metis Mneme Orthosie Pasiphae Pasithee Praxidike Sinope Sponde Thebe Themisto"
 capitals = capitals.split
 
 
