@@ -90,7 +90,7 @@ end
 
 
 #Release 2
-#getters and setters
+#getters and setters driver code
 age = santa[1].celebrate_birthday
 p "age is #{age}"
 p "We are mad at Dasher. He is moving to the end of the line!"
@@ -101,4 +101,6 @@ santa[1].gender = ("Unique")
 
 p "get age and ethnicity of 3rd element in santa array"
 p "male age: #{santa[3].age} and Ethnicity: #{santa[3].ethnicity}."
+
+#Release 3: Refactor with attr_reader and attr_accessor
 
