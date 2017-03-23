@@ -1,5 +1,6 @@
-
+#6.3 assignment Saham Khozestani
 class Santa
+  #Release 3: Refactor with attr_reader and attr_accessor 
   attr_reader :ethnicity
   attr_accessor :gender, :age
   def speak
@@ -105,18 +106,29 @@ santa[1].gender = ("Unique")
 p "get age and ethnicity of first element in santa array"
 p "gender: #{santa[1].gender}, age: #{santa[1].age} and Ethnicity: #{santa[1].ethnicity}."
 
-#Release 3: Refactor with attr_reader and attr_accessor 
 =end
-
+#Release 4 : Build many, many, many santas
+# Initialize an array for the the list of classes
+# WHILE counte is less or equal to 1000
+#  1.create a new class of santa
+#  2.initialize each santa with a random name from the genders_list and random ethnicity from ethnicities_list
+# END
+# set age of each santa with a random number from 1-140
+# print each satnta's detail
+# print number of Santa's participated in the SantaCon
 santas = []
 genders_list = ["agender", "female", "bigender", "male", "female", "gender fluid", "fish", "crab", "gen-x","space","N/A"]
 ethnicities_list = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "martian","crabby","Persian","N/A"]
 
-counter = 0
-while  counter <= 1000 do
+counter = 1000
+#while  counter <= 1000 do
+#  santas << Santa.new(genders_list.sample,ethnicities_list.sample)
+ # counter +=1
+#end
+counter.times do |i|
   santas << Santa.new(genders_list.sample,ethnicities_list.sample)
-  counter +=1
 end
+
 santas.each do |santa|
   santa.age = rand(1..140)
 end
