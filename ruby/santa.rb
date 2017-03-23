@@ -66,37 +66,34 @@ santa.each do |person|
   puts "Santa detail"
   person.print_list
 end
-=begin
+
 details = {
-  "agender": "black",
-  "female": "Latino",
-  "bigender": "white",
-  "male": "Japanese-African",
-  "female": "prefer not to say",
-  "gender fluid": "Mystical Creature (unicorn)",
-  "N/A": "N/A",
+  "Fictional": "Persian Princess",
+  "female": "Shahrzad",
+  "bigender": "I dont Care",
   "male": "Martian",
   "child": "R2D2"
 }
-santas = []
+
 details.each do |key, value|
   #p "#{key}"
 
-  santas<<Santa.new(key, value)
+  santa<<Santa.new(key, value)
 end
-santas.each do |person|
+santa.each do |person|
   person.print_list
 end
 
-santas.each  do |person|
+santa.each  do |person|
   p "#{person.eat_milk_and_cookies("chocolate chip cookie")}"
 end
-=end
+
 
 #Release 2
 #getters and setters
 age = santa[1].celebrate_birthday
 p "age is #{age}"
+p "We are mad at Dasher. He is moving to the end of the line!"
 get_mad = santa[1].get_mad_at("Dasher")
 p "santa #{santa[1].print_list}"
 
