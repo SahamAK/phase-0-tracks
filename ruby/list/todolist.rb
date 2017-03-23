@@ -1,3 +1,4 @@
+#Names: Saham Khozestani and Jarred Pierce
 #todo list
 class TodoList 
   def initialize(list)
