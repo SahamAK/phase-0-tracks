@@ -1,6 +1,6 @@
 class Santa
-  
-
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
   def speak
     p "Ho, ho, ho! Haaaappy holidays!"
   end
@@ -32,18 +32,18 @@ class Santa
     p "#{@reindeer_ranking}"
   end
   #setter to set the gender to a new value
-  def gender=(new_gender)
-    @gender = new_gender
-    p "#{@gender}"
-  end
+  #def gender=(new_gender)
+  #  @gender = new_gender
+  #  p "#{@gender}"
+  #end
   #getter to get the value of age
-  def age
-    @age
-  end
+  #def age
+   # @age
+  #end
   #getter to get ethnicity
-  def ethnicity
-    @ethnicity
-  end
+  #def ethnicity
+    #@ethnicity
+  #end
 end
 =begin
 marvin = Santa.new
@@ -99,8 +99,8 @@ p "santa #{santa[1].print_list}"
 
 santa[1].gender = ("Unique")
 
-p "get age and ethnicity of 3rd element in santa array"
-p "male age: #{santa[3].age} and Ethnicity: #{santa[3].ethnicity}."
+p "get age and ethnicity of first element in santa array"
+p "gender: #{santa[1].gender}, age: #{santa[1].age} and Ethnicity: #{santa[1].ethnicity}."
 
 #Release 3: Refactor with attr_reader and attr_accessor
 
