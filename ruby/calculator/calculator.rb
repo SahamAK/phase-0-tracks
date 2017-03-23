@@ -10,4 +10,8 @@ class Calculator
   def multiply(x,y)
     x * y
   end
+  #release 1: write an RSpec Test
+  def divid(x,y)
+  	x / y
+  end
 end
