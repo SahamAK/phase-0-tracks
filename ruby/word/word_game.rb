@@ -15,8 +15,9 @@ class WordGame
   def initial_state(word_guess)
     if word_guess.length == 0
       @game_word.length.times do |i|
-        word_guess << "_"
+        word_guess << "-"
       end
+    end
     word_guess
   end
 
