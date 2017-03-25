@@ -102,12 +102,13 @@ puts "Welcome to the Word Game"
 puts "User 1: Please enter a valid word or phrase:"
 word = gets.chomp
 game_word = WordGame.new(word)
-
+puts "User 1: Please give a hint about the word or phrase"
+hint = gets.chomp
 
 puts "This is the initial state of the word:"
 puts "Initial State: "
 puts game_word.initial_state
-
+puts "#{hint}"
 while (!game_word.is_over) && (game_word.guess_count != 0)
   puts "Attempts left: #{game_word.guess_count}"
   puts "User 2: Please guess the word"
