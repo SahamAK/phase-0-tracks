@@ -14,6 +14,19 @@
 #     exit and print a loser message.
 
 #   step6: IF guessed the word then exit and give a congratulatory message.
+# END
+#Class Design:
+#game word = word
+#guess word = ""
+#guess_counter = get the length of the word
+#guess letter = set an array to keep track of the letters guessed.This is used so that repeated letters does not count against the player
+#is_over = when the total attempts have reaced or the guessed word correct then end the program.
+# the class with have the following methods:
+# - get initial state
+# - get current_state
+# - get the letter the user entered and update guessed word
+# - print a loss message
+# - print a congratulatory message.
 
 class WordGame
   attr_reader :game_word 
@@ -112,7 +125,7 @@ if game_word.is_over
   game_word.print_congrats
 elsif !game_word.is_over && (game_word.guess_count ==0)
   game_word.print_loss
-puts "YOU LOST!"
+  puts "YOU LOST!"
 end
   
 
