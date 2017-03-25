@@ -1,67 +1,132 @@
-#5.7 Solo Challenge - Word Game
+#6.7 Solo Challenge - Word Game
 #Name: Saham Khozestani
-#
+#Guess Word Game
+# User1 enters a phrase or a word and user2 will guess the word or phrase.
+# step1: get the length of the phrase/word. 
+# step2: display the initial state of the string.
+# WHILE game is not over DO
+#   step1: enter a letter
+#   step2: IF the letter matches and counter is not equal to length of the original word
+#       add the letter to the guessing word and decrement counter
+#   step3: IF the letter is already in the guessing word then do not decrement the counter
+#   step4: IF it is the wrong guess then decrement the counter. 
+#   step5: IF reached total number of attempts and has not guessed the word then 
+#     exit and print a loser message.
+
+#   step6: IF guessed the word then exit and give a congratulatory message.
+# END
+#Class Design:
+#game word = word
+#guess word = ""
+#guess_counter = get the length of the word
+#guess letter = set an array to keep track of the letters guessed.This is used so that repeated letters does not count against the player
+#is_over = when the total attempts have reaced or the guessed word correct then end the program.
+# the class with have the following methods:
+# - get initial state
+# - get current_state
+# - get the letter the user entered and update guessed word
+# - print a loss message
+# - print a congratulatory message.
+
 class WordGame
   attr_reader :game_word 
-  attr_writer :guess_word
+  attr_accessor :guess_word
   attr_accessor :guess_count
   attr_accessor :is_over
+  #array for gussed letters
+  attr_accessor :guess_letters
 
   def initialize(word)
+    
     @game_word = word
-    p "#{@guess_word}"
-    @guess_word = "-----"
+    @guess_word = ""
     @guess_count = word.length
+    @guess_letters = []
     @is_over = false
   end
 
-  def initial_state(word_guess)
-    if @guess_word.length == 0
+  def initial_state
       @game_word.length.times do |i|
+        if @game_word[i] =~  (/[a-zA-Z]/)
         @guess_word << "-"
+      elsif @game_word[i] == " "
+        @guess_word << " "
       end
     end
     @guess_word
   end
 
-  def current_state(word_guess)
-    p "current state"
+  def current_state
+    p "current state: #{@guess_word}"
   end
 
   def get_letter(letter)
-    p "get letter"
-    p "game word is not: #{@game_word}"
-    p "guess wordkis before : #{@guess_word}"
-    p "#{letter}"
+    # Get the letter from input 
+    #if letter in string then update the -- in the guess word
     temp=@game_word.split(//)
-    p "gamae word: #{temp}"
     if (temp.include? (letter))
-       #@guess_word.split(/ /)
-       p "This is guess word : #{@guess_word}"
-      temp.each do |i|
-         #p @guess_word[i]
-        if i == letter
-          temp.index(i)
-
-          @guess_word[temp.index(i)] = letter 
-         end
-       end
+       temp.each_index do |i|
+        if temp[i] == letter
+          @guess_word[i] = letter
+        end
+      end
+    end  
     @guess_count -= 1
-    end
-    str = "a..zA..Z\-"
-    word = ""
+    #add the guessed letter to the array of letters
+    @guess_letters << letter
+    #end
     
-    # @guess_word.each do |c| 
-    #   if c.chr =~ (/[a-zA-Z\-]/) 
-    #   word <<c
-    #   end 
-    # end
-    p "guess word: #{@guess_word}"
+    # p "guess word: #{@guess_word}"
+    # p "guess count is #{@guess_count}"
     @guess_word
   end
-
-  def print_result(word_guess)
-    p "if match congrats else boo!"
+  #if the repeat guess does not account against the user
+  def repeat_guess(letter)
+    #changed guess_word to guess_letters
+    if @guess_letters.include? (letter)
+      puts "You have repeated the letter #{letter}. You will not lose an attempt."
+      @guess_count +=1
+    end
+  end  
+  def print_loss
+    p "SORRY! You are not good."
   end
-
+  def print_congrats
+    puts "YOU GUESSED IT RIGHT! ****** Guessed word: #{@guess_word}******,Game Word: #{@game_word}"
+  end
 end
+
+# user interface
+
+puts "Welcome to the Word Game"
+puts "User 1: Please enter a valid word or phrase:"
+word = gets.chomp
+game_word = WordGame.new(word)
+puts "User 1: Please give a hint about the word or phrase"
+hint = gets.chomp
+
+puts "This is the initial state of the word:"
+puts "Initial State: "
+puts game_word.initial_state
+puts "#{hint}"
+while (!game_word.is_over) && (game_word.guess_count != 0)
+  puts "Attempts left: #{game_word.guess_count}"
+  puts "User 2: Please guess the word"
+  guess_letter = gets.chomp
+  game_word.repeat_guess(guess_letter)
+  game_word.get_letter(guess_letter)
+  #game_word.repeat_guess(guess_letter)
+  game_word.current_state
+
+  if (game_word.guess_word == game_word.game_word)
+    game_word.is_over = true
+  end
+end
+if game_word.is_over 
+  game_word.print_congrats
+elsif !game_word.is_over && (game_word.guess_count ==0)
+  game_word.print_loss
+  puts "YOU LOST!"
+end
+  
+
