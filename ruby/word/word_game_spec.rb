@@ -5,12 +5,12 @@ require_relative "word_game"
 
 describe WordGame do 
 	let(:wordgame) { WordGame.new("glass") }
-	it "initialize with the new word" do
-		#wordgame = WordGame.new("glass")
-		expect(wordgame.initial_state("")).to eq "-----"
-	end
+	# it "initialize with the new word" do
+	# 	#wordgame = WordGame.new("glass")
+	# 	expect(wordgame.initial_state("")).to eq "-----"
+	# end
 	it "add letter to the new string" do
-		expect(wordgame.get_letter("l")).to eq "-l---"
+		expect(wordgame.get_letter("g")).to eq "g----"
 	end
 	
 end

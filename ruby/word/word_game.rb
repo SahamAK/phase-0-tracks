@@ -36,7 +36,7 @@ class WordGame
     temp=@game_word.split(//)
     p "gamae word: #{temp}"
     if (temp.include? (letter))
-       @guess_word.split(/ /)
+       #@guess_word.split(/ /)
        p "This is guess word : #{@guess_word}"
       temp.each do |i|
          #p @guess_word[i]
