@@ -1,6 +1,20 @@
 #6.7 Solo Challenge - Word Game
 #Name: Saham Khozestani
-#
+#Guess Word Game
+# User1 enters a phrase or a word and user2 will guess the word or phrase.
+# step1: get the length of the phrase/word. 
+# step2: display the initial state of the string.
+# WHILE game is not over DO
+#   step1: enter a letter
+#   step2: IF the letter matches and counter is not equal to length of the original word
+#       add the letter to the guessing word and decrement counter
+#   step3: IF the letter is already in the guessing word then do not decrement the counter
+#   step4: IF it is the wrong guess then decrement the counter. 
+#   step5: IF reached total number of attempts and has not guessed the word then 
+#     exit and print a loser message.
+
+#   step6: IF guessed the word then exit and give a congratulatory message.
+
 class WordGame
   attr_reader :game_word 
   attr_accessor :guess_word
