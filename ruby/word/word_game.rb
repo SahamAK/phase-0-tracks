@@ -55,11 +55,11 @@ class WordGame
       @guess_count +=1
     end
   end  
-  def print_loss(word_guess)
+  def print_loss
     p "SORRY! You are not good."
   end
-  def print_congrats(word_guess)
-    puts "YOU GUESSED IT RIGHT! ******#{@guess_word}******"
+  def print_congrats
+    puts "YOU GUESSED IT RIGHT! ****** Guessed word: #{@guess_word}******,Game Word: #{@game_word}"
   end
 end
 
@@ -89,9 +89,9 @@ while (!game_word.is_over) && (game_word.guess_count != 0)
   end
 end
 if game_word.is_over 
-  game_word.print_congrats(game_word.guess_word)
+  game_word.print_congrats
 elsif !game_word.is_over && (game_word.guess_count ==0)
-  game_word.print_loss(game_word.guess_word)
+  game_word.print_loss
 puts "YOU LOST!"
 end
   
