@@ -3,60 +3,51 @@
 #
 class WordGame
   attr_reader :game_word 
-  attr_writer :guess_word
+  attr_accessor :guess_word
   attr_accessor :guess_count
   attr_accessor :is_over
 
   def initialize(word)
+    
     @game_word = word
-    p "#{@guess_word}"
-    @guess_word = "-----"
+    @guess_word = ""
     @guess_count = word.length
     @is_over = false
   end
 
-  def initial_state(word_guess)
-    if @guess_word.length == 0
+  def initial_state
       @game_word.length.times do |i|
+        if @game_word[i] =~  (/[a-zA-Z]/)
         @guess_word << "-"
+      elsif @game_word[i] == " "
+        @guess_word << " "
       end
     end
     @guess_word
   end
 
-  def current_state(word_guess)
+  def current_state
     p "current state"
+    p "#{@guess_word}"
   end
 
   def get_letter(letter)
-    p "get letter"
-    p "game word is not: #{@game_word}"
-    p "guess wordkis before : #{@guess_word}"
-    p "#{letter}"
+    # Get the letter from input 
+    #if letter in string then update the -- in the guess word
     temp=@game_word.split(//)
     p "gamae word: #{temp}"
     if (temp.include? (letter))
-       #@guess_word.split(/ /)
-       p "This is guess word : #{@guess_word}"
-      temp.each do |i|
-         #p @guess_word[i]
-        if i == letter
-          temp.index(i)
-
-          @guess_word[temp.index(i)] = letter 
-         end
-       end
+       temp.each_index do |i|
+        if temp[i] == letter
+          @guess_word[i] = letter
+        end
+      end
+    end  
     @guess_count -= 1
-    end
-    str = "a..zA..Z\-"
-    word = ""
+    #end
     
-    # @guess_word.each do |c| 
-    #   if c.chr =~ (/[a-zA-Z\-]/) 
-    #   word <<c
-    #   end 
-    # end
     p "guess word: #{@guess_word}"
+    p "guess count is #{@guess_count}"
     @guess_word
   end
 
@@ -65,3 +56,19 @@ class WordGame
   end
 
 end
+
+# user interface
+
+puts "Welcome to the Word Game"
+puts "User 1: Please enter a valid word or phrase:"
+word = gets.chomp
+game_word = WordGame.new(word)
+
+
+puts "This is the initial state of the word:"
+puts "Initial State: "
+puts game_word.initial_state
+puts "User 2: Please guess the word"
+guess_letter = gets.chomp
+game_word.get_letter(guess_letter)
+game_word.current_state
