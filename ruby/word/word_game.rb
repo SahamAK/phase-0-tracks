@@ -6,12 +6,15 @@ class WordGame
   attr_accessor :guess_word
   attr_accessor :guess_count
   attr_accessor :is_over
+  #array for gussed letters
+  attr_accessor :guess_letters
 
   def initialize(word)
     
     @game_word = word
     @guess_word = ""
     @guess_count = word.length
+    @guess_letters = []
     @is_over = false
   end
 
@@ -42,6 +45,8 @@ class WordGame
       end
     end  
     @guess_count -= 1
+    #add the guessed letter to the array of letters
+    @guess_letters << letter
     #end
     
     # p "guess word: #{@guess_word}"
@@ -50,7 +55,8 @@ class WordGame
   end
   #if the repeat guess does not account against the user
   def repeat_guess(letter)
-    if @guess_word.include? (letter)
+    #changed guess_word to guess_letters
+    if @guess_letters.include? (letter)
       puts "You have repeated the letter #{letter}. You will not lose an attempt."
       @guess_count +=1
     end
