@@ -1,7 +1,8 @@
 # Virus Predictor
 
 # I worked on this challenge [by myself, with: Matthew Mayerle ].
-# We spent [#] hours on this challenge.
+# We spent 2 hours working together until we hit a mental block, then I spent another 3-4 hours trying to use the best built-in 
+# method I could come up to refactor the 2 private methods. I got stuck using .select. So, I we used .each for our hash hash.
 
 # EXPLANATION OF require_relative
 # This gives the relative location of the state data file that is imported into this program
@@ -66,7 +67,8 @@ end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
-STATE_DATA.each do |state, value|
+#STATE_DATA.each do |state, value|
+STATE_DATA.each_key do |state|
 temp_state = state.downcase
 temp_state = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
 temp_state.virus_effects
@@ -103,8 +105,26 @@ end
 # Release 6.) Moving the private method above virus_effects gave a NoMethod error for VirusPredictor object.
 # The private method prevents everything below it from being called outside of the class.
 
-#Release 7.) We commented out speed = 0.0, because the speed_of_spread method was adding floats
-# to 0.0 instead of just stating a new value for the float.
+#Release 7.) We re-wrote the 2 private methods, predicted_deaths and speed_of_spread. we also pass arguments to 
+#them. We also added 3 new variables to to initialize method. We used a hash to include the constant values for our calculations.
+#This hash has a nested array. The key is the populaion density set values and the array has the factor and the speed.
+#NOTE: WE USED .EACH. I COULD NOT FIGURE OUT HOW TO USE SELECT AND RETURN ONLY ONE VALUE.
+#
+#Release 8.) Reflect
+#What are the differences between two different hash syntaxes shown in the state_data file?
+# => The first hash uses =>(hash rocket) its implicit form where as the second one uses keys as symbol.
+#What does require_relative do? How is it different from requir?
+#require_relative assumes that the file you are calling is in the same directory as teh calling program. In our case state_data.rb is
+#in the same directory , gps6, as mysolution.rb. On the other hand, require is used to provide the full path. require_relative is used
+#for local files.
+#What are some ways to iterate through a hash?
+#using .each, .each_key, .each_value, .each_pair
+#When refactoring virus_effects, what stood out to you about the variables, if anything?
+#We initialized the variables factor and speed in the main initialize method. Without @ in front of these variables, they 
+#are local and we were not able to use them in the private methods.
+#What concept did you most solidify in this challenge?
+#Using DRY.Don't Repeat Yourself,using hash and built-in methods. I am still not sure how to use .select for this project. I know .each
+#loops through every value but select should just go to source. I will have to ask the guide or instructor.
 #---------
 
 
