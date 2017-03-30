@@ -13,20 +13,28 @@
 //
 
 
-function long_str(arr){
-var str_long = arr[0];
+function longString(arr){
+var strLong = arr[0];
 
 for (var i = 1; i<arr.length; i++){
   
-	if ((str_long.length) < (arr[i].length)){
-		str_long = arr[i];
+	if ((strLong.length) < (arr[i].length)){
+		strLong = arr[i];
 		
 	}
 }
 
-return str_long;
+return strLong;
 }
 
-var array_sample = ["long phrase", "longest phrase", "longer phrase", "oh my my what a string"];
-console.log(long_str(array_sample));
+var arraySample = ["long phrase", "longest phrase", "longer phrase", "oh my my what a string"];
+
+console.log(longString(arraySample));
+
+arraySample = ["history", "bookmarks", "safari", "window"];
+console.log(longString(arraySample));
+
+arraySample = ["JavaScript reference", "Global Objects", "Function Properties", "Expressions & Operators"];
+console.log(longString(arraySample));
+
 
