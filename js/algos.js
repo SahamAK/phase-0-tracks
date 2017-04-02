@@ -76,6 +76,44 @@ for (var i=0; i < obj1Length; i++ ){
 }
 return matched;
  }
+//This function will get an arbitrary random an integer between min and max
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+//Release 2
+// this function will
+// Take a random integer between 1 -10;
+//While length is less or equal the integer
+// add a random alphabet letter to the string.
+// end loop
+//output: string of letters
+function getRandomLetter(){
+var strLength;
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var emptyStr ="";
+var newArr = [];
+strLength = getRandomArbitrary(1,10);
+
+console.log(strLength);
+
+for (var i=0; i<strLength; i++){
+  emptyStr +=alphabet[Math.floor(Math.random() * alphabet.length)];
+
+}
+ return emptyStr;
+}
+console.log(getRandomLetter());
+
+
+
+
+
+
+
+
+
+
 
 // var arraySample = ["long phrase", "longest phrase", "longer phrase", "oh my my what a string"];
 
@@ -88,13 +126,13 @@ return matched;
 // console.log(longString(arraySample));
 
 
- var obj1 = { name: "Steven", age: 14, grade: "first"};
- var obj2 = { name: "adam", age:13};
- console.log(matchKeyValue(obj1,obj2));
+ // var obj1 = { name: "Steven", age: 14, grade: "first"};
+ // var obj2 = { name: "adam", age:13};
+ // console.log(matchKeyValue(obj1,obj2));
  
- var obj1 = {name: "Steven", age: 13, grade: 89 };
- var obj2 = {name: "adam", age: 13};
- console.log(matchKeyValue(obj1,obj2));
+ // var obj1 = {name: "Steven", age: 13, grade: 89 };
+ // var obj2 = {name: "adam", age: 13};
+ // console.log(matchKeyValue(obj1,obj2));
  
  
  
