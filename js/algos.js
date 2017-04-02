@@ -95,7 +95,7 @@ var emptyStr ="";
 var newArr = [];
 strLength = getRandomArbitrary(1,10);
 
-console.log(strLength);
+//console.log(strLength);
 
 for (var i=0; i<strLength; i++){
   emptyStr +=alphabet[Math.floor(Math.random() * alphabet.length)];
@@ -120,7 +120,23 @@ function generatArr(num){
   return newArr;
 } 
 
-console.log(generatArr(8));
+
+//Driver code
+var totalTimes = 10;
+var arrayLength;
+var newArray = [];
+
+for (var i = 0; i<10; i++){
+  //Arbitrary length of array
+  arrayLength = getRandomArbitrary(3,10);
+  newArray = generatArr(arrayLength);
+  console.log(newArray);
+  longestWord = longString(newArray);
+  console.log(longestWord);
+
+}
+
+//console.log(generatArr(8));
 
 
 
