@@ -103,7 +103,24 @@ for (var i=0; i<strLength; i++){
 }
  return emptyStr;
 }
-console.log(getRandomLetter());
+// This function will get an integer as an input
+// It will generate an array of the length of that integer
+//The array will consist of random letters of length 1 to 10
+//Input: an integer
+//Output: an array of words of varying length
+function generatArr(num){
+  var newArr = [];
+  var string = "";
+
+  for (var i =0; i < num ; i++){
+    string = getRandomLetter();
+    newArr.push(string);
+  }
+
+  return newArr;
+} 
+
+console.log(generatArr(8));
 
 
 
