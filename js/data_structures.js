@@ -63,3 +63,12 @@ car_1.efficiency();
 //reset capacity variable for car_2
 car_2.capacity = 3;
 car_2.efficiency();
+
+// Release 3: Research on your own
+// 1. for...in loop is a way to get to the keys and values in an object. You can also use Object.keys() to get the keys Object.entries() also iterate properties as for...in loop
+// jQuery uses jQuery.each() method. _.each() which iterates over a list of elements.
+
+// 2.Are there advantages to using constructor functions to create objects?Disadantages?
+// A constructor is useful when we want to create multiple similar objects with the same properties and methods.We use "new" to create a new
+// instance of a constructor.All object instances have a constructor properites. most of built-in constructores such Object,Regex, and array are scope-safe. 
+// They use pattern to determine whether the constructor is called with "new" or not. 
