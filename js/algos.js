@@ -14,7 +14,7 @@
 // keeep iterating and replacing the old string with the new string until you have reached the end of the array.
 
 
-
+// This function will return the first longest string
 function longString(arr){
 var strLong = arr[0];
 
@@ -39,17 +39,15 @@ return strLong;
 //       RETURN true
     
 //   End of loop
-
-// END of loop
 // IF no match
 //   RETRUN false
 
 function matchKeyValue(obj1, obj2){
 var matched = false;
-//get length of object 1
+
 var obj1Length 
 var obj2Length 
-
+// place the keys ofr the objects in an array
 obj1Keys = Object.keys(obj1);
 obj1Length = obj1Keys.length;
 // console.log(obj1Length);
@@ -59,10 +57,11 @@ obj2Keys = Object.keys(obj2);
 obj2Length = obj2Keys.length;
 // console.log(obj2Length);
 // console.log(obj2Keys);
-
+// For each element if obj1 
 for (var i=0; i < obj1Length; i++ ){
 //   console.log("first loop");
 // console.log(obj1[obj1Keys[i]]);
+// compare to each element in obj2. if a match then return true
   for (var j=0; j <obj2Length; j++){
     // console.log("loop 2");
     // console.log(obj2[obj2Keys[j]]);
@@ -76,7 +75,8 @@ for (var i=0; i < obj1Length; i++ ){
 }
 return matched;
  }
-//This function will get an arbitrary random an integer between min and max
+
+//This function will get an arbitrary random integer between min and max
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
@@ -122,6 +122,11 @@ function generatArr(num){
 
 
 //Driver code
+// This code will be executed 10 times
+// WHile i<10 DO
+//Geneerate an array of random length
+//generate an array of random words with the above length
+// find the longest string in the array
 var totalTimes = 10;
 var arrayLength;
 var newArray = [];
@@ -130,13 +135,14 @@ for (var i = 0; i<10; i++){
   //Arbitrary length of array
   arrayLength = getRandomArbitrary(3,10);
   newArray = generatArr(arrayLength);
+  console.log("The array is: ");
   console.log(newArray);
   longestWord = longString(newArray);
-  console.log(longestWord);
+  console.log("Longest word in array: " + longestWord);
 
 }
 
-//console.log(generatArr(8));
+
 
 
 
