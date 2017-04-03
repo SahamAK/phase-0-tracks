@@ -45,8 +45,8 @@ return strLong;
 function matchKeyValue(obj1, obj2){
 var matched = false;
 
-var obj1Length 
-var obj2Length 
+var obj1Length;
+var obj2Length;
 // place the keys ofr the objects in an array
 obj1Keys = Object.keys(obj1);
 obj1Length = obj1Keys.length;
