@@ -10,3 +10,5 @@ This program:
 8. did you like the book?
 9. are you donating the book?
 10.The status of the book, if it is damaged?(( ??, I have to think about this one))
+10. Books you wish to read. This will have:
+  book title, book author, reader. 
