@@ -1,0 +1,60 @@
+Display the information in one table (either table is fine).
+$ sqlite3 dried_meats.db
+SQLite version 3.8.7.2 2014-11-18 20:57:56
+Enter ".help" for usage hints.
+sqlite> .tables
+animal_group  meat_detail
+sqlite> SELECT * FROM meat_detail;
+1|Apohtin|1|2017-02-12|Cyprus|2
+2|Bakkwa|1|2016-12-02|China|4
+3|Biltong|0|2016-02-10|South Africa|3
+4|Capicola|1|2016-03-21|Italy|4
+5|Fenalar|1|2015-12-18|Norway|1
+
+Fields information:
+
+sqlite> PRAGMA table_info("meat_detail");
+0|id|INTEGER|0||1
+1|name|VARCHAR(255)|0||0
+2|passed_QT|Boolean|0||0
+3|date_packed|text|0||0
+4|origin|VARCHAR(255)|0||0
+5|animal_id|INTEGER|0||0
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+sqlite> UPDATE meat_detail SET date_packed = "2016-03-18" WHERE name = "Capicola";
+sqlite> SELECT * FROM meat_detail;
+1|Apohtin|1|2017-02-12|Cyprus|2
+2|Bakkwa|1|2016-12-02|China|4
+3|Biltong|0|2016-02-10|South Africa|3
+4|Capicola|1|2016-03-18|Italy|4
+5|Fenalar|1|2015-12-18|Norway|1
+
+Display the information in both tables using one query.
+sqlite> SELECT * FROM meat_detail, animal_group WHERE meat_detail.animal_id = animal_group.id;
+1|Apohtin|1|2017-02-12|Cyprus|2|2|goat
+2|Bakkwa|1|2016-12-02|China|4|4|pig
+3|Biltong|0|2016-02-10|South Africa|3|3|cow
+4|Capicola|1|2016-03-18|Italy|4|4|pig
+5|Fenalar|1|2015-12-18|Norway|1|1|sheep
+sqlite>
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT meat_detail.name,meat_detail.origin,animal_group.name FROM meat_detail JOIN animal_group ON meat_detail.animal_id = animal_group.id;
+Apohtin|Cyprus|goat
+Bakkwa|China|pig
+Biltong|South Africa|cow
+Capicola|Italy|pig
+Fenalar|Norway|sheep
+sqlite>
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM meat_detail WHERE passed_QT = 0;
+sqlite> SELECT * FROM meat_detail;
+1|Apohtin|1|2017-02-12|Cyprus|2
+2|Bakkwa|1|2016-12-02|China|4
+4|Capicola|1|2016-03-18|Italy|4
+5|Fenalar|1|2015-12-18|Norway|1
+
