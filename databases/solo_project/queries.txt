@@ -58,3 +58,161 @@ sqlite> SELECT * FROM meat_detail;
 4|Capicola|1|2016-03-18|Italy|4
 5|Fenalar|1|2015-12-18|Norway|1
 
++++++++++++++\
+Take this out 
+SELECT players.name, teams.name FROM players JOIN teams ON players.team_id = teams.id;
+
+sqlite> SELECT * FROM animal_group;
+id          name
+----------  ----------
+1           sheep
+2           goat
+3           cow
+4           pig
+sqlite> SELECT * FROM meat_detail;
+id          name        passed_QT   date_packed  origin      animal_id
+----------  ----------  ----------  -----------  ----------  ----------
+1           Apohtin     1           2017-02-12   Cyprus      2
+2           Bakkwa      1           2016-12-02   China       4
+4           Capicola    1           2016-03-18   Italy       4
+5           Fenalar     1           2015-12-18   Norway      1
+sqlite> SELECT meat_detail.name, animal_group.name FROM meat_detail JOIN animal_group ON meat_detail.animal_id = animal_group.id
+;
+name        name
+----------  ----------
+Apohtin     goat
+Bakkwa      pig
+Capicola    pig
+Fenalar     sheep
+sqlite>
+
+LEFT JOIN clause:
+THis will list all the animal from the animal_group with the Null value in meat_detail first 
+sqlite>  SELECT animal_group.id,animal_group.name, meat_detail.id, meat_detail.name FROM animal_group LEFT JOIN meat_detail ON m
+eat_detail.animal_id = animal_group.id ORDER BY meat_detail.id;
+id          name        id          name
+----------  ----------  ----------  ----------
+3           cow
+2           goat        1           Apohtin
+4           pig         2           Bakkwa
+4           pig         4           Capicola
+1           sheep       5           Fenalar
+
+INNER JOIN clause:
+This only shows the rows in animal_group table that has the corresponding rows in meat_detail;
+
+sqlite>  SELECT animal_group.id, animal_group.name, meat_detail.name FROM animal_group INNER JOIN meat_detail ON meat_detail.ani
+mal_id = animal_group.id;
+id          name        name
+----------  ----------  ----------
+2           goat        Apohtin
+4           pig         Bakkwa
+4           pig         Capicola
+1           sheep       Fenalar
+
+CROSS JOIN clause:
+If you use a JOIN,INNER JOIN, or CROSS JOIN without the ON or USING clause, Sqlite produces the Cartesian product of the invloved tables.
+sqlite> SELECT * FROM animal_group JOIN meat_detail;
+id          name        id          name        passed_QT   date_packed  origin      animal_id
+----------  ----------  ----------  ----------  ----------  -----------  ----------  ----------
+1           sheep       1           Apohtin     1           2017-02-12   Cyprus      2
+1           sheep       2           Bakkwa      1           2016-12-02   China       4
+1           sheep       4           Capicola    1           2016-03-18   Italy       4
+1           sheep       5           Fenalar     1           2015-12-18   Norway      1
+2           goat        1           Apohtin     1           2017-02-12   Cyprus      2
+2           goat        2           Bakkwa      1           2016-12-02   China       4
+2           goat        4           Capicola    1           2016-03-18   Italy       4
+2           goat        5           Fenalar     1           2015-12-18   Norway      1
+3           cow         1           Apohtin     1           2017-02-12   Cyprus      2
+3           cow         2           Bakkwa      1           2016-12-02   China       4
+3           cow         4           Capicola    1           2016-03-18   Italy       4
+3           cow         5           Fenalar     1           2015-12-18   Norway      1
+4           pig         1           Apohtin     1           2017-02-12   Cyprus      2
+4           pig         2           Bakkwa      1           2016-12-02   China       4
+4           pig         4           Capicola    1           2016-03-18   Italy       4
+4           pig         5           Fenalar     1           2015-12-18   Norway      1
+sqlite> SELECT * FROM animal_group INNER JOIN meat_detail;
+id          name        id          name        passed_QT   date_packed  origin      animal_id
+----------  ----------  ----------  ----------  ----------  -----------  ----------  ----------
+1           sheep       1           Apohtin     1           2017-02-12   Cyprus      2
+1           sheep       2           Bakkwa      1           2016-12-02   China       4
+1           sheep       4           Capicola    1           2016-03-18   Italy       4
+1           sheep       5           Fenalar     1           2015-12-18   Norway      1
+2           goat        1           Apohtin     1           2017-02-12   Cyprus      2
+2           goat        2           Bakkwa      1           2016-12-02   China       4
+2           goat        4           Capicola    1           2016-03-18   Italy       4
+2           goat        5           Fenalar     1           2015-12-18   Norway      1
+3           cow         1           Apohtin     1           2017-02-12   Cyprus      2
+3           cow         2           Bakkwa      1           2016-12-02   China       4
+3           cow         4           Capicola    1           2016-03-18   Italy       4
+3           cow         5           Fenalar     1           2015-12-18   Norway      1
+4           pig         1           Apohtin     1           2017-02-12   Cyprus      2
+4           pig         2           Bakkwa      1           2016-12-02   China       4
+4           pig         4           Capicola    1           2016-03-18   Italy       4
+4           pig         5           Fenalar     1           2015-12-18   Norway      1
+sqlite> SELECT * FROM animal_group CROSS JOIN meat_detail;
+id          name        id          name        passed_QT   date_packed  origin      animal_id
+----------  ----------  ----------  ----------  ----------  -----------  ----------  ----------
+1           sheep       1           Apohtin     1           2017-02-12   Cyprus      2
+1           sheep       2           Bakkwa      1           2016-12-02   China       4
+1           sheep       4           Capicola    1           2016-03-18   Italy       4
+1           sheep       5           Fenalar     1           2015-12-18   Norway      1
+2           goat        1           Apohtin     1           2017-02-12   Cyprus      2
+2           goat        2           Bakkwa      1           2016-12-02   China       4
+2           goat        4           Capicola    1           2016-03-18   Italy       4
+2           goat        5           Fenalar     1           2015-12-18   Norway      1
+3           cow         1           Apohtin     1           2017-02-12   Cyprus      2
+3           cow         2           Bakkwa      1           2016-12-02   China       4
+3           cow         4           Capicola    1           2016-03-18   Italy       4
+3           cow         5           Fenalar     1           2015-12-18   Norway      1
+4           pig         1           Apohtin     1           2017-02-12   Cyprus      2
+4           pig         2           Bakkwa      1           2016-12-02   China       4
+4           pig         4           Capicola    1           2016-03-18   Italy       4
+4           pig         5           Fenalar     1           2015-12-18   Norway      1
+sqlite> SELECT * FROM animal_group, meat_detail;
+id          name        id          name        passed_QT   date_packed  origin      animal_id
+----------  ----------  ----------  ----------  ----------  -----------  ----------  ----------
+1           sheep       1           Apohtin     1           2017-02-12   Cyprus      2
+1           sheep       2           Bakkwa      1           2016-12-02   China       4
+1           sheep       4           Capicola    1           2016-03-18   Italy       4
+1           sheep       5           Fenalar     1           2015-12-18   Norway      1
+2           goat        1           Apohtin     1           2017-02-12   Cyprus      2
+2           goat        2           Bakkwa      1           2016-12-02   China       4
+2           goat        4           Capicola    1           2016-03-18   Italy       4
+2           goat        5           Fenalar     1           2015-12-18   Norway      1
+3           cow         1           Apohtin     1           2017-02-12   Cyprus      2
+3           cow         2           Bakkwa      1           2016-12-02   China       4
+3           cow         4           Capicola    1           2016-03-18   Italy       4
+3           cow         5           Fenalar     1           2015-12-18   Norway      1
+4           pig         1           Apohtin     1           2017-02-12   Cyprus      2
+4           pig         2           Bakkwa      1           2016-12-02   China       4
+4           pig         4           Capicola    1           2016-03-18   Italy       4
+4           pig         5           Fenalar     1           2015-12-18   Norway      1
+
+PLEASE USE "ON". Otherwise, it is confusing!
+
+This is example of CROSS JOIN:
+sqlite> SELECT animal_group.id, meat_detail.id FROM animal_group CROSS JOIN meat_detail ORDER BY meat_detail.id;
+id          id
+----------  ----------
+1           1
+2           1
+3           1
+4           1
+1           2
+2           2
+3           2
+4           2
+1           4
+2           4
+3           4
+4           4
+1           5
+2           5
+3           5
+4           5
+
+SELF-JOIN clause:
+This kind of join allows you to join a table to itself using either LEFT JOIN or INNER JOIN clause.
+
+An example is where a list of employees includes name of all employees and also a column that specifies the reporting relationship between employees.
