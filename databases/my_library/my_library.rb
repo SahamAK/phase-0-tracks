@@ -12,27 +12,52 @@ puts "This will keep track of your books, readers, comments, donations, etc."
 
 create_tbls(db)
 selection = option
-#add_new_book(db,"Hot Words for the SAT")
-# puts "Would you like to [1] View your watchlist [2] Add a symbol to your watchlist [3] Remove a symbol from your watchlist [0] Exit from your watchlist."
-# 		nav = gets.chomp
-# 		puts "Invalid input, please enter a new input" if navigation_check(nav) == false
-# 	end
-# puts "Please choose from the following options:"
-# puts "[1] book [2] owner [3] reader [4] wish list"
-# option = gets.chomp
-# puts
-if selection == '1'
-	add_new_book(db,"Building Web Apps with WordPress")
-else
-added = true
-added = add_owner(db,"SAHAM")
-if added  
-	print "owner added to book owners list."
-else
-	print "owner already exists"
-end
-end
-#update_owner(db,"Zahra Jablonsky",2)
-#duplicate = check_duplicate_owner(db,"SAHAM")
-#print duplicate
-#db.execute("INSERT INTO book_owners (owner_name) VALUES ( 'SAHAM' )")
+while selection !='0'
+  case selection
+    when '1'
+      tbl = tbls_data
+      # puts "[1] type_of_book"
+      # puts "[2] genre"
+      # puts "[3] book_condition"
+      # puts "[4] is_book_ready_for_donation"
+      # puts "[0] done"
+      case tbl
+        when '1'
+          puts "add to table type of book (i.e. children or adult);"
+        when '2'
+          puts "add to table genre"
+        when '3'
+          puts "add to book_condition table"
+        when '4'
+          puts "add to is_book_ready_for_donation"
+        else
+          puts "done adding to tables"
+      end
+
+    when '2'
+      puts "book title:"
+      title = gets.chomp
+      add_new_book(db,title)
+      puts "author:"
+      author = gets.chomp
+      add_author(db,author)
+
+    when '3'
+      added = true
+      added = add_owner(db,"SAHAM")
+      if added  
+  	   print "owner added to book owners list."
+      else
+  	   print "owner already exists"
+      end
+  when '4'
+      puts "Reader Information"
+  when '5'
+      puts "Wish List"
+  end
+  selection = option
+end    
+
+  puts "Thank you!"
+    
+
