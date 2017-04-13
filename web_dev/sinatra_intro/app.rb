@@ -35,6 +35,10 @@ get '/great_job/:id' do
     "Good job!"
   end
 end
+#3. A route that uses rout parameters to add two numbers and respond with result
+get '/add/:number1/:number2' do
+  "#{params[:number1].to_i + params[:number2].to_i}"
+end
 
 
 get '/:person_1/loves/:person_2' do
