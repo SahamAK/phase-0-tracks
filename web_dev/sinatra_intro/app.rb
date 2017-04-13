@@ -39,7 +39,12 @@ end
 get '/add/:number1/:number2' do
   "#{params[:number1].to_i + params[:number2].to_i}"
 end
+#4 release 0
 
+get '/search/:age' do
+  student = db.execute("SELECT * FROM students WHERE age =?" , [params[:age]])[0]
+  student.to_s
+end
 
 get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
@@ -67,3 +72,18 @@ get '/students/:id' do
   students.to_s
 
 end
+
+post "/testing" do
+  @title = params[:title]
+  "#{@title} we will see"
+end
+# Releas 1 : Research on your own
+# Sinatra
+# Rack
+# Padrino
+# Cuba
+# Pakyow
+#Releae 1.2 Sqls:
+#mysql, Postgres
+# WEB STACK is the collection of software required for web development.
+
