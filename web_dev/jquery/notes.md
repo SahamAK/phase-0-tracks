@@ -18,3 +18,5 @@ I took an hour break and decided to come back but this time I looked up on YouTu
 I think the combination of reading and watching did give me a better understanding of jQuery. Seeing it in action made it easier. I also found a great source to go back to and follow on YouTube.
 
 
+#Release 2: Make a Thing#
+I used hide() and fadeToggle() to play with couple of html tags.
