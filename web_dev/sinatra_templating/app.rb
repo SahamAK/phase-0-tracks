@@ -21,7 +21,19 @@ end
 # a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
-  redirect '/'
+  # @campus = db.execute("SELECT id, name FROM students WHERE campus = ?", [params['campus']])
+  # p @campus.to_s
+  # erb :prt_tbl
 end
 
-# add static resources
+get '/students/location' do
+	erb :select_campus
+end
+
+post '/students' do
+  #db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
+  @campus = db.execute("SELECT id, name FROM students WHERE campus = ?", [params['campus']])
+  p @campus.to_s
+  erb :prt_tbl
+end
+#print a list of student in the selected campus
